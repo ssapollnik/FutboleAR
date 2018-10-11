@@ -11,9 +11,15 @@
 
 		<link type="text/css" rel="stylesheet" href="style.css"/>
 		<title>FutboleAR</title>
-		<link rel="icon" type="image/png" href="img/favicon.png" />
+		<link rel="icon" type="image/png" href="" />
 	</head>
   <body>
+  
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> 
+		var btnPartidoComleto=$('btnSumarme');
+		btnPartidoComleto.text('Completo');
+	</script>
+  
       <div class="container">
           <div class="row">
               <div class="col-xs-12 col-sm-6 col-md-3" id="sideNav">
@@ -42,7 +48,8 @@
                   <dt>Fecha y hora:</dt>
                   <dd>5/9/2018 - 18:00</dd>
                   <dt>Cantidad de jugadores:</dt>
-                  <dd>8/10</dd>
+                  <dd id="capacity">8/10</dd>
+				  <button id="btnSumarme">Sumarme!</button>
               </dl>
           </div>
 
@@ -56,6 +63,7 @@
                   <dd>5/9/2018 - 18:00</dd>
                   <dt>Cantidad de jugadores:</dt>
                   <dd>8/10</dd>
+				  <div align=right><button>Sumarme!</button></div>
               </dl>
           </div>
 
