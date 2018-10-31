@@ -48,6 +48,30 @@ label-title {
 	color: #153D66 !important;
 }
 
+button {
+    background-color: #E5E7E9;
+    border: 2px solid #000000;
+	position:absolute;
+	top: 80%;
+	left: 60%;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 4px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	transition-duration: 0.4s;
+}
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+
 @media (min-width: 1320px) { 
 	#sideNav { 
 	text-align: center; 
@@ -60,4 +84,6 @@ label-title {
 	height: 100vh; 
 	border-right: 3px solid black; 
 	} 
+
+
 } 
