@@ -38,14 +38,6 @@ namespace FutboleAR.Controllers
         // GET: MatchModels/Create
         public ActionResult Create()
         {
-            var items = db.Canchas.ToList();
-
-            if (items != null)
-            {
-                ViewBag.data = items;
-            }
-
-
             return View();
         }
 
@@ -64,7 +56,6 @@ namespace FutboleAR.Controllers
             }
 
             return View(matchModels);
-            
         }
 
         // GET: MatchModels/Edit/5
