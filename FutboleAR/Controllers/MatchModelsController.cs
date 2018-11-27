@@ -20,6 +20,12 @@ namespace FutboleAR.Controllers
             return View(db.Matches.ToList());
         }
 
+        // GET: MatchModels
+        public ActionResult MyMatches()
+        {
+            return View(db.Matches.ToList());
+        }
+
         // GET: MatchModels/Details/5
         public ActionResult Details(int? id)
         {
@@ -38,6 +44,16 @@ namespace FutboleAR.Controllers
         // GET: MatchModels/Create
         public ActionResult Create()
         {
+
+
+            var items = db.Canchas.ToList();
+
+            if (items != null)
+            {
+                ViewBag.data = items;
+            }
+
+
             return View();
         }
 
