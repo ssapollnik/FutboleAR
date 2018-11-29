@@ -18,13 +18,17 @@
     font-size: larger;
 }
 
-.center {
+.fecha {
+    border: none;
+    background: #fff;
+    font-family: 'Roboto';
+    font-weight: 700;
     display: block;
-    margin-left: auto;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-right: auto;
-    width: 80%;
+    height: 40px;
+    outline: none;
+    width: calc(100% - 24px);
+    margin: auto;
+    padding: 6px 12px 6px 12px;
 }
 
 body {
@@ -109,6 +113,5 @@ button:hover {
         font-weight: bold;
         font-size: larger;
     }
+}
 
-
-} 
