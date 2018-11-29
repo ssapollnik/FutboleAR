@@ -1,33 +1,48 @@
 ﻿@model IEnumerable<FutboleAR.Models.MatchModels>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home Page";
 }
 
-<h2>Index</h2>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		var btnPartidoComleto=$('btnSumarme');
+		btnPartidoComleto.text('Completo');
+</script>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaHora)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaHora)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    <div class="d-flex flex-row flex-wrap">
+        <div class="col-xs-12 col-sm-6 col-md-3 contenedor">
+            <label-title>Partido @Html.DisplayFor(modelItem => item.ID)</label-title>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>Lugar:
+                <dt />
+                <dd class="right">@Html.DisplayFor(modelItem => item.Cancha.Direccion)</dd>
+                <img src="~/Content/img/barra.png" class="center" alt="barra">
+                <dt>Fecha y hora:</dt>
+                <dd class="right">@Html.DisplayFor(modelItem => item.FechaHora)</dd>
+                <img src="~/Content/img/barra.png" class="center" alt="barra">
+                <dt>Cantidad de jugadores:</dt>
+                <dd class="right" id="capacity">8/10</dd>
+                <img src="~/Content/img/barra.png" class="center" alt="barra">
+                <div align=center><button type="button" id="sumarme" onclick="sumarse(@Html.DisplayFor(modelItem => item.ID))">Sumarme!</button></div>
+            </dl>
+        </div>
+    </div>
 }
 
-</table>
+<form method="post" action="">
+    <input type="hidden" name="partidoID" value="3"/>
+    <button type="submit">Enviar</button>
+</form>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function sumarse(id) {
+        console.log(id);
+    }
+</script>

@@ -20,6 +20,20 @@ namespace FutboleAR.Controllers
             return View(db.Matches.ToList());
         }
 
+        // POST: MatchModels
+        [HttpPost, ActionName("Index")]
+        [ValidateAntiForgeryToken]
+        public ActionResult JoinMatch([Bind(Include = "ID")] MatchModels matchModels)
+        {
+            return View("JoinMatch");
+        }
+
+        // GET: MatchModels
+        public ActionResult MyMatches()
+        {
+            return View(db.Matches.ToList());
+        }
+
         // GET: MatchModels/Details/5
         public ActionResult Details(int? id)
         {
@@ -38,6 +52,16 @@ namespace FutboleAR.Controllers
         // GET: MatchModels/Create
         public ActionResult Create()
         {
+
+
+            var items = db.Canchas.ToList();
+
+            if (items != null)
+            {
+                ViewBag.data = items;
+            }
+
+
             return View();
         }
 
@@ -113,6 +137,28 @@ namespace FutboleAR.Controllers
             db.Matches.Remove(matchModels);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // GET: MatchModels/JoinMatch
+        public ActionResult JoinMatch(int? id)
+        {
+            UserModels userModels = db.Users.Find(id);
+
+            return View(userModels);
+        }
+
+        [HttpPost, ActionName("JoinMatch")]
+        [ValidateAntiForgeryToken]
+        public ActionResult JoinMatch([Bind(Include = "ID,Nombre,Apellido,Mail")] UserModels userModels)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Users.Add(userModels);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(userModels);
         }
 
         protected override void Dispose(bool disposing)

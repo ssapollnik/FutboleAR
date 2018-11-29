@@ -12,6 +12,7 @@ namespace FutboleAR.Models
     {
         [Key]
         public int ID { get; set; }
+        [DataType(DataType.Date)]
         public DateTime FechaHora { get; set; }
         public List<UserModels> Usuarios { get; set; }
         public CanchaModels Cancha { get; set; }

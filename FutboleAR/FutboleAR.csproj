@@ -206,7 +206,11 @@
     <Content Include="Views\MatchModels\Delete.cshtml" />
     <Content Include="Views\MatchModels\Details.cshtml" />
     <Content Include="Views\MatchModels\Edit.cshtml" />
-    <Content Include="Views\MatchModels\Index.cshtml" />
+    <Content Include="Views\MatchModels\MyMatches.cshtml" />
+    <Content Include="Views\MatchModels\Index.cshtml">
+      <BrowseToURL>MatchModels</BrowseToURL>
+    </Content>
+    <Content Include="Views\MatchModels\JoinMatch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

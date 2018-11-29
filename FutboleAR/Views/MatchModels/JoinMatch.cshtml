@@ -1,0 +1,38 @@
+﻿@model FutboleAR.Models.UserModels
+
+@{
+    ViewBag.Title = "JoinMatch";
+}
+
+<h2>Unirse al partido</h2>
+
+<div>
+    <h4>MatchModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+            @Html.EditorFor(model => model.Nombre)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+            @Html.EditorFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.Mail)
+            @Html.EditorFor(model => model.Mail)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Unirse" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
