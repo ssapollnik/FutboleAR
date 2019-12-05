@@ -7,7 +7,7 @@
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
-<div>
+<div class="col-xs-12 col-sm-6 col-md-3 contenedor">
     <h4>MatchModels</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -21,12 +21,14 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
         </div>
     }
+
+    <button type="submit" id="Index" value="Index" onclick="history.go(-1);">Volver</button>
 </div>

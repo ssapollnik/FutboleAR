@@ -70,7 +70,7 @@ namespace FutboleAR.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FechaHora")] MatchModels matchModels)
+        public ActionResult Create([Bind(Include = "ID,Cancha,FechaHora")] MatchModels matchModels)
         {
             if (ModelState.IsValid)
             {

@@ -1,16 +1,16 @@
 ﻿@model FutboleAR.Models.MatchModels
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar";
 }
 
-<h2>Edit</h2>
+<h2>Editar</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+<div class="col-xs-12 col-sm-6 col-md-3 contenedor">
     <div class="form-horizontal">
         <h4>MatchModels</h4>
         <hr />
@@ -27,14 +27,17 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <div align=center>
+                    <button type="submit" id="sd">Save</button>
+                </div>
             </div>
         </div>
     </div>
+</div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div align=center>
+    <button type="submit" id="Index" value="Index" onclick="history.go(-1);">Volver</button>
 </div>
 
 @section Scripts {
